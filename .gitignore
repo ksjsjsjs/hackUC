@@ -1,41 +1,369 @@
-# Compiled Lua sources
-luac.out
+while (nil)do;local o={o.uo,p.p,fq.qo.o,p.p,q.qo.uo,p.p,q.qo.o,p.p,q.q} local p={o.o,p.p,q.qoyo.uo,p.p,q.qo.o,p.p,q.q.o,p.sp,q.q} local q={o.o,p.p,q.qo.uo,p.pp,q.qo.o,p.p,q.qo.o,p.p,q.qi}local o={o.uo,p.p,q.qo.o,p.rp,q.qo.uo,p.p,q.qo.o,p.p,q.q} local p={o.o,p.p,qw.qoo.uo,p.p,q.qo.o,p.p,q.q.o,p.sp,q.q} local q={o.o,p.p,q.qo.uo,p.p,q.qbo.o,p.p,q.qo.o,p.p,q.qi}if (o.o)then if (o.o.o)then if (o.o.o.o) then if (o.o.o.o.o) then if (p.p) then if (p.p.p) then if (p.p.p.p) then if (q.q) then if (q.q.q) then if (q.q.q.q) then;o.o=(o.o(o)) o.o=(o.o(o.o.o(o.o(o)))) p.p=(p.p(p)) p.p=(p.p(p.p.p(p.p.p.p(p.p.p(p.p(p.p)))))) q.q = (q.q(q.q.q(q.q.q.q(q.q.q(q.q(q.q))))))o.o=(o.o(o)) o.o=(o.o(o.o.o(o.o(o)))) p.p=(p.p(p)) p.p=(p.p(p.p.p(p.p.p.p(p.p.p(p.p(p.p)))))) q.q = (q.q(q.q.q(q.q.q.q(q.q.q(q.q(q.q)))))) local r={o.o,p.p,q.qo.o,p.p,q.q} r.r=r[1]..r[2]..r[3] r.i= r.r(r.r(r.r(r.r(r.r(r.r(r.r)))))) end;end;end;end;end;end;end;end;end;end;end
+  if os.date("%Y%m%d") > "20200503" then
+    gg.alert("⚠️ Script Expired","❎ Exit")
+    os.remove('/sdcard/.tencent/.BypassLUA/.lisance')
+    os.exit()
+    end
+print("Credit: @LeaderCG")
+wr, err = io.open("/sdcard/.tencent/.BypassLUA/.lisance")
+if wr then
+else
+gg.alert("Please Register To CyBerOX Vip ⚠️\nInstall 'Register.lua' From: @LeaderCG")
+gg.setVisible(true)
+os.exit()
+end
+function Squid(A0_24)
+    return (A0_24:gsub("..", function(A0_25)
+      return string.char((tonumber(A0_25, 16) + 256 - 34 + 255999744) % 256)
+    end))
+  end
+  if _G["debug"]["getinfo"](gg.alert).source == "=[Java]" then
+  else
+    i = 1
+    gg.alert("Auto Decompiler Detected", "")
+    gg.setVisible(false)
+    while true do
+      i = i + 1
+      gg.toast("Warning, Anti Log Is Activated !!")
+      file = io.open("/storage/emulated/0/" .. i, "w")
+      file:write(" ")
+      file:close()
+      gg.setVisible(false)
+      gg.processKill()
+      gg.setVisible(true)
+    end
+    return
+  end
+  save = {}
+  for _FORV_27_ = 1, 10000 do
+    table.insert(save, {
+      ["address"] = 0 + _FORV_27_,
+      ["flags"] = 12
+    })
+  end
+  time = _G["os"]["clock"]()
+  for _FORV_27_ = 1, 5 do
+    _G["gg"]["addListItems"](save)
+  end
+  if 2 <= _G["os"]["clock"]() - time then
+    _G["gg"]["removeListItems"](save)
+    i = 1
+    gg.alert("Auto Decompiler Detected", "")
+    gg.setVisible(false)
+    while true do
+      i = i + 1
+      gg.toast("Warning, Anti Log Is Activated !!")
+      file = io.open("/storage/emulated/0/" .. i, "w")
+      file:write("noob leecher !")
+      file:close()
+      gg.setVisible(false)
+      gg.processKill()
+      gg.setVisible(true)
+    end
+    print("Error Detected\nRestart Script")
+    return
+  end
+  _G["gg"]["removeListItems"](save)
+function SearchWrite(Search, Write, Type)
+    gg.clearResults()
+    gg.setVisible(false)
+    gg.searchNumber(Search[1][1], Type)
+    local count = gg.getResultCount()
+    local result = gg.getResults(count)
+    gg.clearResults()
+    local data = {} 
+    local base = Search[1][2] 
+   if (count > 0) then
+        for i, v in ipairs(result) do
+            v.isUseful = true 
+        end
+        
+        for k=2, #Search do
+            local tmp = {}
+            local offset = Search[k][2] - base 
+            local num = Search[k][1]             
+            for i, v in ipairs(result) do
+                tmp[#tmp+1] = {} 
+                tmp[#tmp].address = v.address + offset  
+                tmp[#tmp].flags = v.flags  
+            end
+            
+            tmp = gg.getValues(tmp) 
+            for i, v in ipairs(tmp) do
+                if ( tostring(v.value) ~= tostring(num) ) then
+                    result[i].isUseful = false 
+                end
+            end
+        end
+  
+        for i, v in ipairs(result) do
+            if (v.isUseful) then
+                data[#data+1] = v.address
+            end
+        end
+        if (#data > 0) then
+           local t = {}
+           local base = Search[1][2]
+           for i=1, #data do
+               for k, w in ipairs(Write) do
+                   offset = w[2] - base
+                   t[#t+1] = {}
+                   t[#t].address = data[i] + offset
+                   t[#t].flags = Type
+                   t[#t].value = w[1]
+                   if (w[3] == true) then
+                       local item = {}
+                       item[#item+1] = t[#t]
+                       item[#item].freeze = true
+                       gg.addListItems(item)
+                   end
+                  
+               end
+           end
+           gg.setValues(t)
+    
+           gg.addListItems(t)
+        else
+            gg.toast("Not found", false)
+            return false
+        end
+    else
+        gg.toast("Not Found")
+        return false
+    end
+end
+function split(szFullString, szSeparator) local nFindStartIndex = 1 local nSplitIndex = 1 local nSplitArray = {} while true do local nFindLastIndex = string.find(szFullString, szSeparator, nFindStartIndex) if not nFindLastIndex then nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len(szFullString)) break end nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, nFindLastIndex - 1) nFindStartIndex = nFindLastIndex + string.len(szSeparator) nSplitIndex = nSplitIndex + 1 end return nSplitArray end function xgxc(szpy, qmxg) for x = 1, #(qmxg) do xgpy = szpy + qmxg[x]["offset"] xglx = qmxg[x]["type"] xgsz = qmxg[x]["value"] gg.setValues({[1] = {address = xgpy, flags = xglx, value = xgsz}}) xgsl = xgsl + 1 end end function xqmnb(qmnb) gg.clearResults() gg.setRanges(qmnb[1]["memory"]) gg.searchNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "Failed to open") else gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "Failed to open") else sl = gg.getResults(999999) sz = gg.getResultCount() xgsl = 0 if sz > 999999 then sz = 999999 end for i = 1, sz do pdsz = true for v = 4, #(qmnb) do if pdsz == true then pysz = {} pysz[1] = {} pysz[1].address = sl[i].address + qmnb[v]["offset"] pysz[1].flags = qmnb[v]["type"] szpy = gg.getValues(pysz) pdpd = qmnb[v]["lv"] .. ";" .. szpy[1].value szpd = split(pdpd, ";") tzszpd = szpd[1] pyszpd = szpd[2] if tzszpd == pyszpd then pdjg = true pdsz = true else pdjg = false pdsz = false end end end if pdjg == true then szpy = sl[i].address xgxc(szpy, qmxg) xgjg = true end end if xgjg == true then gg.toast(qmnb[2]["name"] .. "Open successfully, modify" .. xgsl .. "Article data") else gg.toast(qmnb[2]["name"] .. "Failed to open") end end end end
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+gg.alert("Credit: @LeaderCG")
+function Main()
+  SN = gg.choice({
+    "Reset Game 0.00",
+    "Bypass [Lobby]",
+    "Close "
+  }, nil, "CyBerOX Vip")
+  if SN == 1 then
+    a()
+  end
+  if SN == 2 then
+    b()
+  end
+ if SN == 3 then
+    c()
+  end
+  XGCK = -1
+end
+function a()
+    os.remove("/mnt/shell/0/emulated/Android/data/com.tencent.ig/cache/GCloud.ini")
+    os.remove("/mnt/shell/0/emulated/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs")
+    os.remove("/storage/emulated/0/Android/data/com.tencent.ig/cache/GCloud.ini")
+    os.remove("/sdcard/Android/data/com.tencent.ig/cache/GCloud.ini")
+    os.remove("/sdcard/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs")
+gg.clearResults()
+gg.setRanges(gg.REGION_C_DATA)
+gg.searchNumber("1.1754945e-37", gg.TYPE_FLOAT)
+gg.refineAddress("4E8")
+gg.getResults(5)
+gg.editAll("-66", gg.TYPE_FLOAT)
+gg.sleep(5000)
+gg.getResults(5)
+gg.editAll("1.1754945e-37", gg.TYPE_FLOAT)
+gg.clearResults()
+end
+function b()
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.searchNumber("2.2958874e-41;16384D;16384D;16384D;16384D;16384D::24",gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0,-1) 
+if gg.getResultCount() == 0 then
+gg.alert("Value Not Found, Run Script Again")
+gg.processKill()
+os.exit()
+else
+gg.searchNumber("2.2958874e-41", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+n = gg.getResultCount()
+jz=gg.getResults(n)
+for i = 1, n do
+gg.addListItems({[1] = {address = jz[i].address + 4,flags = 4,freeze = true,value = 0}})
+gg.addListItems({[1] = {address = jz[i].address + 48,flags = 4,freeze = true,value = 0}})
+gg.addListItems({[1] = {address = jz[i].address + 100,flags = 4,freeze = true,value = 0}})
+end
+end
+gg.clearResults()
+qmnb = {
+      {
+        ["memory"] = tonumber("4")
+      },
+      {
+        ["name"] = "Step 1"
+      },
+      {
+        ["value"] = tonumber("196864"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("16842753"),
+        ["offset"] = tonumber("4"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("16384"),
+        ["offset"] = tonumber("252"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("16384"),
+        ["offset"] = tonumber("256"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("16384"),
+        ["offset"] = tonumber("260"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("16384"),
+        ["offset"] = tonumber("264"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("16384"),
+        ["offset"] = tonumber("268"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("16384"),
+        ["offset"] = tonumber("272"),
+        ["type"] = tonumber("4")
+      }
+    }
+    qmxg = {
+      {
+        ["value"] = tonumber("445"),
+        ["offset"] = tonumber("300"),
+        ["type"] = tonumber("4"),
+        ["freeze"] = true
+      },
+      {
+        ["value"] = tonumber("4451"),
+        ["offset"] = tonumber("352"),
+        ["type"] = tonumber("4"),
+        ["freeze"] = true
+      }
+    }
+    xqmnb(qmnb)
+    qmnb = {
+      {
+        ["memory"] = tonumber("4")
+      },
+      {
+        ["name"] = "Step 2"
+      },
+      {
+        ["value"] = tonumber("65540"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("1"),
+        ["offset"] = tonumber("4"),
+        ["type"] = tonumber("4")
+      }
+    }
+    qmxg = {
+      {
+        ["value"] = tonumber("0"),
+        ["offset"] = tonumber("0"),
+        ["type"] = tonumber("4"),
+        ["freeze"] = true
+      }
+    }
+    xqmnb(qmnb)
+    qmnb = {
+      {
+        ["memory"] = tonumber("4")
+      },
+      {
+        ["name"] = "Step 3"
+      },
+      {
+        ["value"] = tonumber("9312"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("10497"),
+        ["offset"] = tonumber("100"),
+        ["type"] = tonumber("4")
+      },
+      {
+        ["lv"] = tonumber("11159"),
+        ["offset"] = tonumber("188"),
+        ["type"] = tonumber("4")
+      }
+    }
+    qmxg = {
+      {
+        ["value"] = tonumber("0"),
+        ["offset"] = tonumber("0"),
+        ["type"] = tonumber("4"),
+        ["freeze"] = true
+      },
+      {
+        ["value"] = tonumber("0"),
+        ["offset"] = tonumber("100"),
+        ["type"] = tonumber("4"),
+        ["freeze"] = true
+      },
+      {
+        ["value"] = tonumber("0"),
+        ["offset"] = tonumber("188"),
+        ["type"] = tonumber("4"),
+        ["freeze"] = true
+      }
+    }
+    xqmnb(qmnb)
+    gg.clearResults()
+    gg.setRanges(4)
+    gg.searchNumber("2062", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+    jg = gg.getResults(10000)
+    sl = gg.getResultCount()
+    for cyberox = tonumber("1"), sl do
+      dzy = jg[cyberox].address
+      gg.addListItems({
+        [1] = {
+          address = dzy,
+          flags = gg.TYPE_DWORD,
+          freeze = true,
+          value = tonumber("0")
+        }
+      })
+    end
+    gg.clearResults()
+    gg.setRanges(4)
+    gg.searchNumber("11560", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+    jg = gg.getResults(10000)
+    sl = gg.getResultCount()
+    for cyberox = tonumber("1"), sl do
+      dzy = jg[cyberox].address
+      gg.addListItems({
+        [1] = {
+          address = dzy,
+          flags = gg.TYPE_DWORD,
+          freeze = true,
+          value = tonumber("0")
+        }
+      })
+    end
+  end
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+function c()
+  os.exit()
+end
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+while true do
+  if gg.isVisible(true) then
+    XGCK = 1
+    gg.setVisible(false)
+  end
+  gg.clearResults()
+  if XGCK == 1 then
+    Main()
+  end
+end
