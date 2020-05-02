@@ -4,6 +4,8 @@ while (nil)do;local o={o.uo,p.p,fq.qo.o,p.p,q.qo.uo,p.p,q.qo.o,p.p,q.q} local p=
     os.remove('/sdcard/.tencent/.BypassLUA/.lisance')
 os.remove("/sdcard/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/core_patch_0.17.0.11800.pak")
     os.remove("/sdcard/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.17.0.11800.pak")
+    os.remove("/sdcard/Paks.zip")
+    os.remove("/sdcard/Download/Paks.zip")
     os.exit()
     end
 print("Credit: @LeaderCG")
